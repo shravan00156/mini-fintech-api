@@ -3,6 +3,8 @@
 from fastapi import FastAPI
 
 from app.routes.health import router as health_router
+from app.routes.transactions import router as transactions_router
+from app.routes.users import router as users_router
 
 app = FastAPI(
     title="Mini Fintech API",
@@ -12,3 +14,5 @@ app = FastAPI(
 
 # Register API route groups.
 app.include_router(health_router)
+app.include_router(users_router)
+app.include_router(transactions_router)
