@@ -1,14 +1,9 @@
-"""Declarative Base class for SQLAlchemy models.
+"""Shared SQLAlchemy base class for ORM models."""
 
-All future ORM models should inherit from `Base`.
-That keeps table metadata in one shared registry.
-"""
+from sqlalchemy.orm import DeclarativeBase
 
-from sqlalchemy.orm import declarative_base
 
-# Base is the parent class for all database models.
-# Example later:
-# class User(Base):
-#     __tablename__ = "users"
-#     ...
-Base = declarative_base()
+class Base(DeclarativeBase):
+    """Base class inherited by all SQLAlchemy models."""
+
+

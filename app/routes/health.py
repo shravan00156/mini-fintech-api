@@ -1,14 +1,11 @@
-"""Health-check routes.
-
-This module is a simple example of how to keep API endpoints organized by domain.
-"""
+"""Health check routes."""
 
 from fastapi import APIRouter
 
-router = APIRouter(prefix="/health", tags=["health"])
+router = APIRouter(tags=["Health"])
 
 
-@router.get("", summary="Health check")
+@router.get("/health")
 def health_check() -> dict[str, str]:
-    """Return service health status."""
+    """Simple service liveness endpoint."""
     return {"status": "ok"}
